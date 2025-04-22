@@ -25,9 +25,12 @@ bool download()
     for (size_t seq = 0; seq < manipulatorProtocolPtr->readManipulator.degrees; seq ++)
     {
       //MCP->goalList[seq].position = manipulatorProtocolPtr->readManipulator.stepMotorList[seq].position;
-      point.positions.push_back( manipulatorProtocolPtr->readManipulator.stepMotorList[seq].position);
+      //point.positions.push_back( manipulatorProtocolPtr->readManipulator.stepMotorList[seq].position);
+      MCP->trajectory.points[MCP->trajectory.size].positions[seq] = manipulatorProtocolPtr->readManipulator.stepMotorList[seq].position;
     }
-    MCP->trajectory.points.push_back(point);
+    
+    MCP->trajectory.size += 1;
+    //MCP->trajectory.points.push_back(point);
     return true;
   }
   return false;
@@ -55,7 +58,7 @@ void timerEvent()
 //配置
 void setup()
 {
-  Serial.begin(230400);
+  Serial.begin(115200);
   Timer1.initialize(25000);      //0.025s
   Timer1.attachInterrupt( timerEvent );
   MCP->setPlusePeriod(50);

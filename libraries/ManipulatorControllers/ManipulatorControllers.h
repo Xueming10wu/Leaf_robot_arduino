@@ -2,8 +2,9 @@
 #define MANIPULATORCONTROLLERS_H
 
 #include <ManipulatorProtocol.h>
-#include <avr_stl.h>
-#include <vector>
+// #include <avr_stl.h>
+// #include <ArduinoSTL.h>
+// #include <vector>
 
 using namespace std;
 
@@ -17,12 +18,14 @@ struct Controller
 
 struct Point
 {
-    vector<int> positions;
+    int positions[6];
 };
 
 struct Trajectory
 {
-    vector<Point> points;
+    Point points[128];
+    int index;
+    int size;
 };
 
 

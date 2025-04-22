@@ -16,6 +16,8 @@ ManipulatorControllers::ManipulatorControllers(int degrees_)
         currentPlu[i] = 0;
         expectPlu[i] = 0;
     }
+    trajectory.index = 0;
+    trajectory.size = 0;
 }
 
 ManipulatorControllers::~ManipulatorControllers()
@@ -101,7 +103,8 @@ void ManipulatorControllers::setPlusePeriod( int p_ )
 
 void ManipulatorControllers::loadNextPoint()
 {//加载下一个点
-    if (trajectory.points.size() > 0)
+    // if (trajectory.points.size() > 0)
+    if (trajectory.size > 0)
     {
         if (isArrived())
         {
@@ -109,14 +112,18 @@ void ManipulatorControllers::loadNextPoint()
             {
                 goalList[seq].position = trajectory.points[pointIndex].positions[seq];
             }
-            if ( trajectory.points.size() - 1 > pointIndex )
+            // if ( trajectory.points.size() - 1 > pointIndex )
+            if ( trajectory.size - 1 > pointIndex )
             {
                 pointIndex ++;      //索引指向下一个点
             }
             else
             {//清理
                 pointIndex = 0;
-                trajectory.points.clear();
+
+                trajectory.index = 0;
+                trajectory.size = 0;
+                //trajectory.points.clear();
             }    
         }
     }
