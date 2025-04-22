@@ -5,8 +5,7 @@ Leaf_robot机械臂下位机。 因2025年，本人遇到了人生喜事，所�
 
 
 【上位机代码，请访问】
-  https://gitee.com/wuxueming/Leaf_robot_ros
-  https://github.com/Xueming10wu/Leaf_robot_ros
+  https://gitee.com/wuxueming/Leaf_robot_ros 或 https://github.com/Xueming10wu/Leaf_robot_ros
 
 
 此控制器性能不是很好，原因包括arduino做主控，以及开源等，希望大家见谅。
