@@ -1,6 +1,12 @@
 # Leaf_robot_arduino
+
 Leaf_robot机械臂下位机。 因2025年，本人遇到了人生喜事，所以将此代码开源。
 希望之前引用分支的朋友，将这个代码也一起引用走，来方便初学的朋友。
+
+
+【上位机代码，请访问】
+  https://gitee.com/wuxueming/Leaf_robot_ros
+  https://github.com/Xueming10wu/Leaf_robot_ros
 
 
 此控制器性能不是很好，原因包括arduino做主控，以及开源等，希望大家见谅。
